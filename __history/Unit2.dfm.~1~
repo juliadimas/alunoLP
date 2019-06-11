@@ -1,0 +1,61 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 201
+  ClientWidth = 447
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 248
+    Top = 0
+    Width = 49
+    Height = 13
+    Caption = 'Bem Vindo'
+  end
+  object Download: TButton
+    Left = 104
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = 'Download'
+    TabOrder = 0
+    OnClick = DownloadClick
+  end
+  object Memo1: TMemo
+    Left = 248
+    Top = 19
+    Width = 185
+    Height = 174
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 1
+  end
+  object MainMenu1: TMainMenu
+    Left = 8
+    object Menu1: TMenuItem
+      Caption = 'Menu'
+    end
+    object Help1: TMenuItem
+      Caption = 'Help'
+    end
+  end
+  object NetHTTPClient1: TNetHTTPClient
+    Asynchronous = False
+    ConnectionTimeout = 60000
+    ResponseTimeout = 60000
+    AllowCookies = True
+    HandleRedirects = True
+    UserAgent = 'Embarcadero URI Client/1.0'
+    Left = 192
+    Top = 120
+  end
+end

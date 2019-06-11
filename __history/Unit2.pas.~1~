@@ -1,0 +1,38 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus,
+  System.Net.URLClient, System.Net.HttpClient, System.Net.HttpClientComponent;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    MainMenu1: TMainMenu;
+    Download: TButton;
+    Menu1: TMenuItem;
+    Help1: TMenuItem;
+    Memo1: TMemo;
+    NetHTTPClient1: TNetHTTPClient;
+    procedure DownloadClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.DownloadClick(Sender: TObject);
+begin
+Memo1.Text:= NetHTTPClient1.Get('https://evandrojv.com.br/index.php?id=enviararquivos').ContentAsString();
+end;
+
+end.
