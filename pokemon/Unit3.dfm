@@ -1,0 +1,46 @@
+object DataModule3: TDataModule3
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 445
+  Width = 585
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 
+      'C:\Users\Informatica03\Documents\EasyPHP-DevServer-14.1VC9\binar' +
+      'ies\mysql\lib\libmysql.dll'
+    Left = 56
+    Top = 24
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=352_jc_pokemon'
+      'User_Name=root'
+      'DriverID=MySQL')
+    Connected = True
+    Left = 176
+    Top = 24
+  end
+  object FDQuery_Pokemon: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from pokemon')
+    Left = 264
+    Top = 24
+  end
+  object FDQuery_Treinador: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from treinador')
+    Left = 264
+    Top = 96
+  end
+  object DataSource_Pokemon: TDataSource
+    DataSet = FDQuery_Pokemon
+    Left = 360
+    Top = 24
+  end
+  object DataSource_Treinador: TDataSource
+    DataSet = FDQuery_Treinador
+    Left = 360
+    Top = 96
+  end
+end
